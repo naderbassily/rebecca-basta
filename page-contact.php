@@ -22,13 +22,14 @@ if ( isset( $_POST['rb_contact_nonce'] ) && wp_verify_nonce( sanitize_text_field
 		$form_error   = true;
 		$form_message = __( 'Please fill in all required fields with a valid email address.', 'rebecca' );
 	} else {
-		$to      = 'me@naderramsis.com';
+		$to      = 'contact@rebeccabasta.com';
 		$headers = array(
 			'Content-Type: text/html; charset=UTF-8',
+			'From: Rebecca Basta <contact@rebeccabasta.com>',
 			'Reply-To: ' . $name . ' <' . $email . '>',
 		);
 
-		$email_subject = '[Rebecca Basta] ' . ( $subject ?: $type ?: __( 'New Contact Message', 'rebecca' ) );
+		$email_subject = 'inqiury from rebecca site';
 
 		$email_body  = '<p><strong>' . esc_html__( 'Name:', 'rebecca' ) . '</strong> ' . esc_html( $name ) . '</p>';
 		$email_body .= '<p><strong>' . esc_html__( 'Email:', 'rebecca' ) . '</strong> ' . esc_html( $email ) . '</p>';
