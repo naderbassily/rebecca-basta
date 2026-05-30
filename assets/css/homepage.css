@@ -598,14 +598,6 @@ body.home button {
   font-weight: 500;
 }
 
-.works-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  margin-top: var(--space-lg);
-}
-
 .works-footer {
   display: flex;
   justify-content: center;
@@ -646,6 +638,14 @@ body.home button {
   transform: translateX(4px);
 }
 
+.works-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: var(--space-lg);
+}
+
 .works-nav-btn {
   width: 48px;
   height: 48px;
@@ -684,14 +684,16 @@ body.home button {
 
 .coming-books-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;
   gap: clamp(24px, 2.8vw, 36px);
 }
 
 .coming-books-grid .work-card {
-  flex: none;
+  justify-self: center;
   opacity: 1;
   transform: none;
+  flex: none;
 }
 
 .coming-books-grid .work-title {
@@ -1102,12 +1104,9 @@ body.home button {
     max-width: 300px;
   }
 
-  .work-card {
-    flex: 0 0 clamp(240px, 70vw, 300px);
-  }
-
-  .works-nav {
-    gap: 20px;
+  .works-grid,
+  .coming-books-grid {
+    grid-template-columns: repeat(2, minmax(240px, 320px));
   }
 
   .connect-types {
@@ -1126,11 +1125,12 @@ body.home button {
 }
 
 @media (max-width: 480px) {
+  .works-grid,
   .coming-books-grid {
     grid-template-columns: 1fr;
   }
 
-  .coming-book-card {
+  .work-card {
     max-width: 340px;
     margin: 0 auto;
   }

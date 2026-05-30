@@ -3199,6 +3199,17 @@ section {
 	gap: 30px;
 }
 
+.coming-books-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 30px;
+}
+
+.coming-books-grid .work-card {
+	flex: 0 1 220px;
+}
+
 .book-card {
 	overflow: hidden;
 	background: rgba(255, 255, 255, 0.1);

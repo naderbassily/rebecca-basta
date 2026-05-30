@@ -22,7 +22,7 @@ if ( isset( $_POST['rb_contact_nonce'] ) && wp_verify_nonce( sanitize_text_field
 		$form_error   = true;
 		$form_message = __( 'Please fill in all required fields with a valid email address.', 'rebecca' );
 	} else {
-		$to      = 'contact@rebeccabasta.com';
+		$to      = 'me@naderramsis.com';
 		$headers = array(
 			'Content-Type: text/html; charset=UTF-8',
 			'Reply-To: ' . $name . ' <' . $email . '>',

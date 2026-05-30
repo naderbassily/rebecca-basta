@@ -146,8 +146,9 @@
 
       const cardWidth = getCardWidth();
       const trackWidth = track.parentElement.offsetWidth;
-      const offset = trackWidth / 2 - cards[currentIndex].offsetWidth / 2;
-      const translateX = -(currentIndex * cardWidth) + offset;
+      const paddingLeft = parseInt(window.getComputedStyle(track).paddingLeft, 10) || 0;
+      const offset = trackWidth / 2 - cards[currentIndex].offsetWidth / 2 - paddingLeft;
+      const translateX = Math.min(0, -(currentIndex * cardWidth) + offset);
 
       track.style.transform = "translateX(" + translateX + "px)";
 
